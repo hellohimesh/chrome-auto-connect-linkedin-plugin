@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>LinkedIn Auto Connect</title>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <h3>Linked In Auto connect plugin</h3>
+    <h4>How it Works!
+	<ul>
+		<li>Open respective page
+		</li>
+		<li>Open developer tools/ console page using inspect</li>
+		<li>Paste this code</li>
+		<li>Press Enter</li>
+	</ul>
+    <h4>For  search result page</h4>
+    <textarea readonly="readonly" style="width:325px;height:70px;overflow:hidden;resize:none">
+    	
+jQuery('.search-result__actions--primary').each(function(index, value) {
+setTimeout(function() {
+jQuery(value).trigger('click');
+document.querySelector(".button-primary-large").click();
+}, index * 1000);
+});</textarea>
+
+    
+
+    <h4>for People you may know page</h4>
+    <textarea readonly="readonly" style="width:325px;height:70px;overflow:hidden;resize:none">
+jQuery('.button-secondary-small').each(function(index, value) {
+setTimeout(function() {
+jQuery(value).trigger('click');
+}, index * 1000);
+});
+</textarea>
+  </body>
+</html>
